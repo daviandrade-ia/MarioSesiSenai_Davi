@@ -30,15 +30,16 @@
             `pontos` INT NOT NULL,
             `data_registro` TIMESTAMP DEFAULT CURRENT_TIMESTAMP)"
         );
-    } catch (PDOException $e){
-        http_response_code(500);
-        header('Content-Type: application/json; charset=utf-8');
+    } 
+        catch (PDOException $e){
+            http_response_code(500);
+            header('Content-Type: application/json; charset=utf-8');
 
-        echo json_encode({
-            'status' => 'error',
-            'message' => 'Não foi possível conectar ao Banco de Dados.' . $e->getMessage()
-        });
+            echo json_encode([
+                'status' => 'error',
+                'message' => 'Não foi possível conectar ao Banco de Dados.' . $e->getMessage()
+            ]);
 
-        exit;
-    }
+            exit;
+        }
 ?>
