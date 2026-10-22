@@ -37,9 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
         playerInput.value = savedName;
     }
 
-    /**
-     * Inicia uma nova rodada
-     */
+    /*Inicia uma nova rodada*/
     function startGame() {
         // Limpa loops anteriores se existirem
         clearInterval(gameLoop);
